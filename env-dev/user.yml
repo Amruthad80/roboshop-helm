@@ -1,4 +1,5 @@
 name: user
+port: 8080
 env:
   - name: MONGO
     value: "true"
