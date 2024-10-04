@@ -9,17 +9,10 @@ spec:
   template:
     spec:
       containers:
-        - name: {{ .Values.name}}
-          image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
-          env:
-            - name: DB_TYPE
-              value: mongo
-            - name: APP_GIT_URL
-              value: "https://github.com/roboshop-devops-project-v3/catalogue"
-            - name: DB_HOST
-              value: mongo.dev.devopsb72.online
-            - name: SCHEMA_FILE
-              value: db/master-data.js
+      - name: {{ .Values.name}}
+        image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
+        env:
+          {{- toYaml .Values.env | nindent 10 }}
       restartPolicy: Never
   backoffLimit: 0
 {{- end -}}
