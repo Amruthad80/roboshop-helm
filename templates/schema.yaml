@@ -13,8 +13,8 @@ spec:
           image: 533267172446.dkr.ecr.us-east-1.amazonaws.com/schema-load:latest
           imagePullPolicy: Always
           envFrom:
-            - secretRef:
-                name: {{ .Values.name }}
+          - secretRef:
+              name: {{ .Values.name }}
       restartPolicy: Never
   backoffLimit: 0
 {{- end -}}
