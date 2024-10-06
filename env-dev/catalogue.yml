@@ -19,3 +19,4 @@ schema:
       value: mongo.dev.devopsb72.online
     - name: SCHEMA_FILES
       value: "master-data"
+
